@@ -11,19 +11,23 @@
 .chat-view{
   background-color: #ffffff;
  width : calc(100% - 300px);
- height: 100vh;
 }
 
 .side-command{
   background-color: #253141;
   height: 100px;
   padding: 0 20px ;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .category{
   height: calc(100vh - 100px);
   background-color: #2F3E51;
   padding: 0 20px ;
+  /* チャットルームが増えて画面がはみ出すことを想定して、スクロールができるようにしています。*/
+  overflow: scroll;
 }
 
 .chat-up-command{
@@ -42,4 +46,28 @@
   background-color: #dddddd;
   height: 90px;
   padding: 20px 40px ;
+}
+.user-name a{
+  font-size: 16px;
+  color: #fafafa;
+  text-decoration: none;
+}
+
+.chat-link{
+  font-size: 10px;
+}
+
+.chat-link a{
+  color: deepskyblue;
+  border: 1px solid lightblue;
+  padding: 14px ;
+text-decoration: none;
+}
+
+.room{
+  padding: 20px 0px 40px ;
+}
+.room-name a {
+  color: white;
+  text-decoration: none;
 }
