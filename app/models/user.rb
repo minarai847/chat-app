@@ -6,5 +6,6 @@ class User < ApplicationRecord
          #validates カラム,presence:true
          #nameカラムが空の場合データベースに保存しない
          validates :name, presence:true
-
+         has_many :room_users
+         has_many :rooms, through: :room_users
 end
