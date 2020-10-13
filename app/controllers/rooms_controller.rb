@@ -5,6 +5,10 @@ class RoomsController < ApplicationController
     @room = Room.new
   end
 
+  def index
+  end
+  
+
   def create
     @room = Room.new(room_params)
     #保存(save)が成功したかどうかで処理を分岐させている
