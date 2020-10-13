@@ -5,6 +5,7 @@ class MessagesController < ApplicationController
     #paramsに含まれているroom_idを代入される
     #params[:room_id]とすることでroom_idを取得できる
     @room = Room.find(params[:room_id])
+    
     #<↑@room.messagesでチャットルームに紐づいている全てのメッセージを@messagesに代入>
     #全てのメッセージを取得するので、N1+問題が発生する
     #N1+問題とは、メッセージの数と同数のアクセスが必要になるため、動作が重くなる
