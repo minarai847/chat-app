@@ -122,3 +122,10 @@ select {
   height: 80px;
   width: 100%;
 }
+
+.field_with_errors{
+  /*contentsにすることで、その要素のボックスだけが表示されなくなる*/
+  /*空で送信しようとした時に、ボックスのいちが変わってしまうことへの対処*/
+  display: contents;
+
+}
