@@ -9,24 +9,8 @@
      </div>
 </div>
 <div class="chat">
-  <div class="message">
-　　　<div class="upper-user">
-   <div class="user">Tom</div>
-   <div class="times">2020/3/31(wed)12:43:30</div>
- </div>
- <div class="lower-message">
-   <div class="comment">おはよう</div>
-  </div>
-  </div>
-  <div class="message">
-　　　<div class="upper-user">
-   <div class="user">Tom</div>
-   <div class="times">2020/3/31(wed)12:43:30</div>
- </div>
- <div class="lower-message">
-   <div class="comment">こんにちは</div>
-  </div>
-  </div>
+<!--このように記述することで、_message.hetml.erbを部分テンプレートとして読み込む-->
+<%= render partial: 'message', collection: @messages %>
   </div>
   <%= form_with model: [@room,@message], class: 'chat-down-command', local: true do|f|%>
     <div class="send-message">
