@@ -7,7 +7,7 @@ class RoomsController < ApplicationController
 
   def index
   end
-  
+
 
   def create
     @room = Room.new(room_params)
@@ -19,6 +19,10 @@ class RoomsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def create
+    
   end
 
   private

@@ -28,14 +28,13 @@
   </div>
   </div>
   </div>
-<div class="chat-down-command">
-   <div class="send-message">
-   <!--placeholderは文字を薄ら表示させる時に使う-->
-   <input class="form-message" placeholder= "type a message">
-   <label class="form-image">
-   <span class="image-file">画像</span>
-   <input type="file" class="hidden">
-   </label>
-      </div>
-   <input class="form-submit" type="submit" value="送信">
-</div>
+  <%= form_with model: [@room,@message], class: 'chat-down-command', local: true do|f|%>
+    <div class="send-message">
+    <%=f.text_field :content, class: 'form-message', placeholder: 'type a message' %>
+    <label class="form-image">
+    <span class="image-file">画像</span>
+    <%= f.file_field  :image, class: 'hidden'%>
+    </label>
+    </div>
+    <%= f.submit '送信', class: 'form-submit'%>
+    <% end %>
