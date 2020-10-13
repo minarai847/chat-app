@@ -7,7 +7,7 @@ class RoomsController < ApplicationController
 
   def index
   end
-  
+
 
   def create
     @room = Room.new(room_params)
@@ -19,6 +19,19 @@ class RoomsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def create
+
+  end
+
+  def destroy
+    #どこの
+    room = Room.find(params[:id])
+    #何をするのか
+    room.destroy
+    #処理後どこの画面にするのか
+    redirect_to root_path
   end
 
   private

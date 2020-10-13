@@ -15,7 +15,7 @@
   <div class="room">
    <div class = "room-name">
       <!--doで定めた|内|に１個ずつnameカラムを呼び出す-->
-   <a href = "#"><%=room.name %></a>
+   <%= link_to room.name, room_messages_path(room) %>
    </div>
    </div>
    <% end %>
