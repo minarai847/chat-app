@@ -22,7 +22,16 @@ class RoomsController < ApplicationController
   end
 
   def create
-    
+
+  end
+
+  def destroy
+    #どこの
+    room = Room.find(params[:id])
+    #何をするのか
+    room.destroy
+    #処理後どこの画面にするのか
+    redirect_to root_path
   end
 
   private
