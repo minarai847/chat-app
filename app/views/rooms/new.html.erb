@@ -16,6 +16,16 @@
         <label class='chat-room-form__label' for='chat_room_チャットメンバー'>チャットメンバー</label>
       </div>
       <div class='chat-room-form__field--right'>
+      <!--クリックすると項目やユーザーが出るようにする機能--->
+      <select name="room[user_ids][]">
+         <option value="">チャットするユーザーを選択してください</option>
+         <!--現在ログインしているユーザーをeachメソッドから除外する処理-->
+         <!--モデル名.where.not("条件")は条件に一致したレコード以外を取得する-->
+         <% User.where.not(id: current_user.id).each do |user| %>
+         <option value=<%user.id %>><%= user.name %></option>
+         <% end %>
+         </select>
+         <input name="room[user_ids][]" type="hidden" value=<%=current_user.id %>>
       </div>
     </div>
     <div class='chat-room-form__field'>
