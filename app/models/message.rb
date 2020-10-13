@@ -7,5 +7,10 @@ class Message < ApplicationRecord
   #imageファイル
   has_one_attached :image
   #contentカラム（メッセージが入るところ）が空だとDBには保存しないという指令
-  validates :content, presence: true
+  validates :content, presence: true, unless: :was_attached?
+#was_attachedは画像があれば、true　なければfalse　で返す仕組み
+   def was_attached?
+   self.image.attached?
+   end
+
 end

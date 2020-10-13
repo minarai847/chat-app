@@ -21,9 +21,6 @@ class RoomsController < ApplicationController
     end
   end
 
-  def create
-
-  end
 
   def destroy
     #どこの
